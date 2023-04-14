@@ -5,22 +5,18 @@ import ListComp from './ListComp';
 import { getAlbumdataAction } from '../Redux/appSlice';
 import { useSelector } from 'react-redux'
 import { Text } from 'react-native' ;
+import ModalComp from './ModalComp';
 
 const Dashboard = () => {
-    const dispatch = useDispatch()
+   
 
-    React.useEffect(()=>{
-        dispatch(getAlbumdataAction())
-    },[])
-
-    const albums = useSelector(state => state?.appdata)
 
     // const {title:{label}} = albums
 
     return (
         <>
         <SearchBox/>
-        <Text>{'title'}</Text>
+        <ModalComp />
         <ListComp/>
         </>
     )
